@@ -9,10 +9,13 @@ import com.example.mysharedpreferences.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    var color = arrayOf("")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+//        getSpinner(this, binding.spColor, color, R.array.colors)
 
         initUI()
         checkUserValues()

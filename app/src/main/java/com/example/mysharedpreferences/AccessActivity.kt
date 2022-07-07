@@ -25,7 +25,7 @@ class AccessActivity : AppCompatActivity() {
         val userName = prefs.getName()
         binding.tvHello.text = "¡Hola $userName!"
         if (prefs.getColorCheck()) {
-            binding.containerLayout.setBackgroundColor(
+            binding.ContainerCardView.setBackgroundColor(
                 ContextCompat.getColor(this, R.color.purple_200)
             )
         }
