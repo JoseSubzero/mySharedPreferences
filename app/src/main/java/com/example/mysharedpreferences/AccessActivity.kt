@@ -25,9 +25,24 @@ class AccessActivity : AppCompatActivity() {
         val userName = prefs.getName()
         binding.tvHello.text = "¡Hola $userName!"
         if (prefs.getColorCheck()) {
+            val theColor = getMyColor(prefs.getSpinner())
             binding.ContainerCardView.setBackgroundColor(
-                ContextCompat.getColor(this, R.color.purple_200)
+                ContextCompat.getColor(this, theColor)
             )
         }
+    }
+
+    fun getMyColor(color:String):Int{
+        val resourceColor = when(color){
+            "yellow" -> R.color.yellow
+            "red" -> R.color.red
+            "orange" -> R.color.orange
+            "blue" -> R.color.blue
+            "green" -> R.color.green
+            "gray" -> R.color.gray
+            "Purple" -> R.color.purple
+            else -> R.color.white
+        }
+        return resourceColor
     }
 }
